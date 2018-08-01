@@ -54,7 +54,7 @@ cacheSolve <- function(x, ...) {
   ## The current value of inv - possibly NULL - is pulled from the expanded 
   ## matrix passed to cacheSolve
   if(!is.null(inv)) {
-    message("getting cached data")
+    message("This inverse is retrieved from cache (previously calculated):")
     return(inv)
   }
   ## If inv is not NULL (i.e. it has been calculated already), this alerts
@@ -69,6 +69,7 @@ cacheSolve <- function(x, ...) {
   x$setinv(inv)
   ## Runs the basic function to assign the result of the calculation to inv
   ## in the parent environment.
+  message("This inverse is freshly calculated:")
   inv
   ## Outputs the caluclated inverse matrix - without saying it is retrieved
   ## from a cache.
