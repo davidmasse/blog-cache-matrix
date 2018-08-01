@@ -38,7 +38,7 @@ cacheSolve <- function(x, ...) {
 
 Below, the inverse of the input matrix a is calculated (via R’s solve function) the first time cacheSolve is called but retrieved from memory the next time and until a different matrix is fed into makeCachematrix.
 
-![](figures/python-execution.png)
+![](python-execution.png)
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
