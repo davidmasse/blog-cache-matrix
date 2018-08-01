@@ -75,4 +75,4 @@ cacheSolve <- function(x, ...) {
   ## from a cache.
 }
 
-test_matrix <- matrix(c(3,2,4,1,5,6,2,2,4), nrow=3, ncol = 3)
+test_matrix <- matrix(c(3,2,4,1,5,6,2,2,4), nrow = 3, ncol = 3)
