@@ -8,7 +8,7 @@ To investigate the subject further — and having enjoyed translating natura
 
 The purpose of the code below is to save processing time by caching the inverse of a matrix so that it is not repeatedly inverted (an expensive operation for larger matrices). The function makeCachematrix takes a matrix (assumed square and invertible) and returns a list of four functions that can operate on this matrix or its inverse (found in the parent environment, makeCachematrix). These closures can then be passed as an argument to cacheSolve, which checks whether there is already a stored inverse and, if so, returns it. If not, the inverse is calculated, stored and returned. The storage part involves write access to the parent environment, makeCachematrix, where the function getinv is defined. This is why getinv uses R’s deep assignment arrow, <<-, instead of <-. (The function set also uses <<- but is never deployed in cacheSolve. It could be used in the future to manually reset the original matrix.)
 
-`makeCachematrix <- function(x = matrix()) {
+```makeCachematrix <- function(x = matrix()) {
         inv <- NULL
         set <- function(y) {
                 x <<- y
@@ -32,7 +32,7 @@ cacheSolve <- function(x, ...) {
         x$setinv(inv)
         message("This inverse is freshly calculated:")
         inv
-}`
+}```
 
 ## Including Plots
 
