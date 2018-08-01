@@ -12,21 +12,21 @@ The purpose of the code below is to save processing time by caching the inverse 
 makeCachematrix <- function(x = matrix()) {
         inv <- NULL
         set <- function(y) {
-                x <<- y
-                inv <<- NULL
+              x <<- y
+              inv <<- NULL
         }
         get <- function() x
         setinv <- function(inverse) inv <<- inverse
         getinv <- function() inv
         list(set = set, get = get,
-             setinv = setinv,
-             getinv = getinv)
+            setinv = setinv,
+            getinv = getinv)
 }
 cacheSolve <- function(x, ...) {
         inv <- x$getinv()
         if(!is.null(inv)) {
-                message("This inverse is retrieved from cache (previously calculated):")
-                return(inv)
+            message("This inverse is retrieved from cache (previously calculated):")
+            return(inv)
         }
         data <- x$get()
         inv <- solve(data, ...)
@@ -36,12 +36,11 @@ cacheSolve <- function(x, ...) {
 }
 ```
 
-## Including Plots
+Below, the inverse of the input matrix a is calculated (via R’s solve function) the first time cacheSolve is called but retrieved from memory the next time and until a different matrix is fed into makeCachematrix.
 
-You can also embed plots, for example:
+!(python-execution.png)
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
