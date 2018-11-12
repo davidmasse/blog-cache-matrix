@@ -1,5 +1,3 @@
-[Link to blog post](https://medium.com/@idontneedtoseethat/found-in-translation-r-and-python-f5dac417426f)
-
 ## Found in Translation: R and Python
 
 As a student first of R and then of Python, I noticed an overall difference in approach: R tends to be used for functional programming while Python programs emphasize object orientation. Object-oriented R, rarely deployed during data analysis, seems to be confined mainly to writing packages for R. However, this usage pattern need not be the case.
